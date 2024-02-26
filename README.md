@@ -16,7 +16,6 @@ The Project Management App is a full-stack web application designed to help team
 - **Frontend:** React, SCSS for styling.
 - **Backend:** Flask (Python) for handling API requests.
 - **Database:** MySQL for data storage.
-- **Authentication:** Utilizes JWT for secure user authentication.
 
 ## Getting Started
 
