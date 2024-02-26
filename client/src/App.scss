@@ -1,0 +1,67 @@
+/* App.scss */
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  height: 80px; /* New height for navbar */
+  line-height: 80px; /* Align text vertically */
+  padding: 0 1rem;
+  box-sizing: border-box;
+  /* Add other styles for your navbar here */
+}
+
+.app-body {
+  padding-top: 80px; /* Updated to match the new navbar height */
+  display: flex;
+  min-height: calc(100vh - 80px); /* Adjusted for the new navbar height */
+  box-sizing: border-box;
+}
+
+.sidebar {
+  width: 200px;
+  height: calc(100vh - 80px); /* Adjusted for the new navbar height */
+  position: fixed;
+  top: 80px; /* Adjusted to match the new navbar height */
+  left: 0;
+  box-sizing: border-box;
+  /* Add styles for scrollbar if needed */
+}
+
+.content {
+  margin-left: 200px;
+  width: calc(100% - 200px);
+  padding: 1rem;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .navbar {
+    position: static;
+    height: auto; /* Height auto for mobile */
+    line-height: normal; /* Line height back to normal for mobile */
+    padding: 0;
+  }
+
+  .app-body {
+    flex-direction: column;
+    padding-top: 0;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+    top: 0;
+  }
+
+  .content {
+    margin-left: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+

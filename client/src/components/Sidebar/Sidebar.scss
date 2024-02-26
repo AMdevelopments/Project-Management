@@ -1,0 +1,34 @@
+//Sidebar.scss
+.sidebar {
+    width: 200px;
+    height: 100vh;
+    background-color: #f0f2f5;
+    padding: 20px;
+  }
+  
+  .sidebar-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar-item {
+    margin-bottom: 10px;
+    cursor: pointer; /* Ensures the cursor changes to a pointer */
+  }
+  
+  /* Add hover effect directly for .sidebar-item */
+  .sidebar-item:hover {
+    background-color: #e4e6eb; /* This provides a visual cue that the item is clickable */
+  }
+  
+  .sidebar-item a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* Ensure the hover effect on links */
+  .sidebar-item a:hover {
+    text-decoration: underline;
+  }
+  
