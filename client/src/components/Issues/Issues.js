@@ -61,13 +61,28 @@ const Issues = () => {
 
   const assignIssueToUser = async (issueId) => {
     try {
-      await axios.put(`http://localhost:5000/api/issues/${issueId}/assign`, { userId });
+      // Retrieve userId from localStorage
+      const userId = localStorage.getItem('user_id');
+  
+      // Ensure userId is not null or undefined
+      if (!userId) {
+        console.error("No user ID found");
+        return;
+      }
+  
+      // Convert userId to the expected format if necessary (e.g., to number)
+      const formattedUserId = parseInt(userId, 10); // Adjust based on your backend expectation
+  
+      // Send a PUT request to the backend with the userId
+      await axios.put(`http://localhost:5000/api/issues/${issueId}/assign`, { user_id: formattedUserId });
+  
+      // Refetch issues to reflect the changes
       fetchIssues();
     } catch (error) {
       console.error("Failed to assign issue", error);
     }
   };
-
+  
   const unassignIssueFromUser = async (issueId) => {
     try {
       await axios.put(`http://localhost:5000/api/issues/${issueId}/unassign`);
@@ -130,3 +145,4 @@ const Issues = () => {
 };
 
 export default Issues;
+
